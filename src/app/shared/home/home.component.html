@@ -1,0 +1,10 @@
+
+<div class="home-container">
+    <h1>Bienvenido a CRUD Angular</h1>
+    <p>Administra tu aplicación con facilidad.</p>
+  
+    <button *ngIf="isAuthenticated() && isAdmin()" mat-raised-button color="primary" routerLink="/usuarios">
+      Ir a Usuarios
+    </button>
+  </div>
+  

@@ -1,0 +1,43 @@
+<div class="register-container">
+    <mat-card class="register-card">
+      <h2>Crear Cuenta</h2>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        
+        <!-- Username Field -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Username</mat-label>
+          <input matInput formControlName="username" type="text" required />
+          <mat-error *ngIf="f['username']?.touched && f['username']?.invalid">
+            <div *ngIf="f['username']?.errors?.['required']">Username is required.</div>
+            <div *ngIf="f['username']?.errors?.['minlength']">Username must be at least 3 characters long.</div>
+          </mat-error>
+        </mat-form-field>
+  
+        <!-- Email Field -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" type="email" required />
+          <mat-error *ngIf="f['email']?.touched && f['email']?.invalid">
+            <div *ngIf="f['email']?.errors?.['required']">Email is required.</div>
+            <div *ngIf="f['email']?.errors?.['email']">Invalid email format.</div>
+          </mat-error>
+        </mat-form-field>
+  
+        <!-- Password Field -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password" type="password" required />
+          <mat-error *ngIf="f['password']?.touched && f['password']?.invalid">
+            <div *ngIf="f['password']?.errors?.['required']">Password is required.</div>
+            <div *ngIf="f['password']?.errors?.['minlength']">Password must be at least 6 characters long.</div>
+          </mat-error>
+        </mat-form-field>
+  
+        <!-- Submit Button -->
+        <button mat-raised-button color="primary" class="full-width" type="submit" [disabled]="registerForm.invalid">
+          Register
+        </button>
+      </form>
+    </mat-card>
+  </div>
+  

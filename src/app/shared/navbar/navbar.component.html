@@ -1,0 +1,15 @@
+<mat-toolbar color="primary" class="navbar">
+    <span class="logo" routerLink="/home">CRUD Angular</span>
+  
+    <span class="spacer"></span>
+  
+    <a mat-button *ngIf="isAdmin()" routerLink="/usuarios" class="nav-link">Usuarios</a>
+  
+    <span *ngIf="isAuthenticated()" class="user-info">{{ fullName }}</span>
+  
+    <a mat-button *ngIf="!isAuthenticated()" routerLink="/login" class="auth-link">Iniciar Sesión</a>
+    <a mat-button *ngIf="!isAuthenticated()" routerLink="/register" class="auth-link">Registrarse</a>
+  
+    <button *ngIf="isAuthenticated()" mat-button (click)="logout()" class="logout-button">Cerrar sesión</button>
+  </mat-toolbar>
+  

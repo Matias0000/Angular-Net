@@ -1,0 +1,38 @@
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(120deg, #6175e6, #1a237e);
+}
+  
+  .register-card {
+    width: 400px;
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  
+    h2 {
+      margin-bottom: 30px;
+      font-size: 24px;
+      font-weight: 500;
+      color: #263238;
+    }
+  
+    .full-width {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    mat-form-field {
+      margin-bottom: 20px;
+    }
+  
+    button {
+      width: 100%;
+      padding: 12px;
+    }
+  }
+  

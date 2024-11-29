@@ -1,0 +1,120 @@
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #1a237e; /* Nuevo color más elegante */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil para dar profundidad */
+}
+
+/* Logo */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1); /* Efecto de hover */
+}
+
+/* Espaciador */
+.spacer {
+  flex: 1;
+}
+
+/* Enlaces de navegación */
+.nav-link {
+  font-size: 16px;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #acaaaa; /* Color vibrante para hover */
+  color: white;
+}
+
+/* Información del usuario */
+.user-info {
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+/* Enlaces de autenticación */
+.auth-link {
+  font-size: 14px;
+  color: white;
+  margin-left: 10px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.auth-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ff4081;
+}
+
+/* Botón de Cerrar sesión */
+.logout-button {
+  font-size: 14px;
+  color: white;
+  background-color: #d32f2f; /* Rojo brillante */
+  border-radius: 25px;
+  padding: 10px 20px;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #c2185b; /* Rojo más oscuro para el hover */
+}
+
+/* Asegurar que los botones de los links no tengan subrayado */
+mat-toolbar a {
+  text-decoration: none;
+}
+
+/* Responsividad - mejorar el diseño en pantallas pequeñas */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 16px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .nav-link,
+  .auth-link,
+  .user-info {
+    font-size: 14px;
+  }
+
+  .spacer {
+    display: none; /* Ocultar el espaciador en pantallas pequeñas */
+  }
+
+  .user-info {
+    font-size: 14px;
+    margin-right: 8px;
+  }
+
+  .auth-link, .nav-link {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+}
