@@ -1,27 +1,33 @@
-# CRUDAngular16
+# CRUD con Angular 16 y SQL Server
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+Este proyecto es un ejemplo de una aplicación CRUD (Crear, Leer, Actualizar, Eliminar) utilizando **Angular 16** como frontend y **SQL Server** como base de datos.
 
-## Development server
+## Requisitos previos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. **Docker**: Asegúrate de tener Docker instalado y funcionando en tu sistema.
+2. **Docker Compose**: Necesario para configurar y administrar los servicios de Docker.
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Configuración del entorno
 
-## Build
+### 1. Creación del archivo `docker-compose.yml`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Crea un archivo llamado `docker-compose.yml` con el siguiente contenido:
 
-## Running unit tests
+```yaml
+version: "3.9"
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver_container
+    ports:
+      - "1433:1433" # Puerto SQL Server
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "YourStrong@Password" # Cambia esta contraseña a una más segura
+    volumes:
+      - sqlserver_data:/var/opt/mssql
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+volumes:
+  sqlserver_data:
