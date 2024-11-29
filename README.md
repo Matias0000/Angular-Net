@@ -22,10 +22,10 @@ services:
     image: mcr.microsoft.com/mssql/server:2022-latest
     container_name: sqlserver_container
     ports:
-      - "1433:1433" # Puerto SQL Server
+      - "1433:1433" 
     environment:
       ACCEPT_EULA: "Y"
-      SA_PASSWORD: "YourStrong@Password" # Cambia esta contraseña a una más segura
+      SA_PASSWORD: "YourStrong@Password" 
     volumes:
       - sqlserver_data:/var/opt/mssql
 
